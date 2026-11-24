@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Обзвон на должность губернатора — Лубянка RP</title>
+<style>
+:root{--bg:#0b1020;--panel:#121a2d;--panel2:#18233b;--line:#2b3958;--text:#eef3ff;--muted:#9eacc8;--accent:#f0a52b;--good:#35c98a;--bad:#ff6677}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at top,#1b2a49 0,#0b1020 58%);font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text);display:flex;justify-content:center;padding:28px 14px}
+.wrap{width:min(850px,100%)}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}.brand{font-size:13px;letter-spacing:.16em;color:var(--accent);font-weight:800}.pill{border:1px solid var(--line);border-radius:999px;padding:8px 12px;color:var(--muted);font-size:12px}
+.card{background:linear-gradient(160deg,rgba(24,35,59,.97),rgba(15,23,40,.98));border:1px solid var(--line);border-radius:22px;padding:clamp(20px,4vw,36px);box-shadow:0 22px 70px #0006}
+h1{font-size:clamp(27px,5vw,42px);line-height:1.08;margin:8px 0 12px}h2{font-size:22px;margin:0 0 10px}.sub{color:var(--muted);line-height:1.6;margin:0 0 24px}.accent{color:var(--accent)}
+.field{display:block;color:var(--muted);font-size:13px;margin:18px 0 8px}input{width:100%;padding:14px 15px;border-radius:12px;border:1px solid var(--line);background:#0b1325;color:var(--text);font-size:16px;outline:none}input:focus{border-color:var(--accent)}
+.btn{border:0;border-radius:12px;background:var(--accent);color:#17120a;font-weight:800;padding:14px 20px;font-size:15px;cursor:pointer;transition:.15s}.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}.secondary{background:#24324e;color:var(--text);border:1px solid var(--line)}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.stats{display:flex;gap:10px;flex-wrap:wrap}.stat{background:#0b1325;border:1px solid var(--line);padding:9px 12px;border-radius:11px;font-size:13px;color:var(--muted)}.stat b{color:var(--text)}
+.progress{height:8px;background:#0a1222;border-radius:99px;overflow:hidden;margin:20px 0 25px;border:1px solid #24324e}.bar{height:100%;width:0;background:linear-gradient(90deg,#e58e1d,#ffd06a);transition:width .25s}
+.qnum{font-size:12px;color:var(--accent);font-weight:800;letter-spacing:.13em;margin-bottom:10px}.question{font-size:clamp(20px,3vw,26px);line-height:1.3;margin:0 0 20px}.answers{display:grid;gap:11px}.answer{width:100%;text-align:left;padding:15px 16px;border-radius:13px;background:#101a2e;border:1px solid var(--line);color:var(--text);font-size:15px;cursor:pointer;display:flex;gap:12px;align-items:flex-start;transition:.15s}.answer:hover:not(:disabled){border-color:#d99a36;background:#1b2942}.letter{width:25px;height:25px;flex:0 0 25px;border-radius:8px;background:#263653;display:grid;place-items:center;font-size:12px;font-weight:800;color:#dce7ff}.answer.correct{border-color:var(--good);background:#123328}.answer.wrong{border-color:var(--bad);background:#381d2a}.answer:disabled{cursor:default}
+.feedback{margin-top:16px;padding:13px 15px;border-radius:12px;background:#0c1527;border:1px solid var(--line);color:var(--muted);line-height:1.5}.feedback strong{color:var(--text)}.hidden{display:none!important}.result{text-align:center;padding:10px 0}.score{font-size:64px;font-weight:900;letter-spacing:-.05em;margin:12px 0}.pass{color:var(--good)}.fail{color:var(--bad)}.result p{color:var(--muted);line-height:1.6}.small{font-size:12px;color:var(--muted);line-height:1.5;margin-top:22px}.footer{text-align:center;color:#73819d;font-size:12px;margin:16px 0}
+@media(max-width:520px){body{padding:14px 10px}.top{align-items:flex-start}.pill{font-size:11px}.card{border-radius:17px}.answer{padding:13px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><div class="brand">ЛУБЯНКА RP <span style="color:#71809f">/ КАДРОВАЯ СИСТЕМА</span></div><div class="pill">Кандидат на должность губернатора</div></div>
+  <main class="card">
+    <section id="start">
+      <div class="qnum">АТТЕСТАЦИЯ · 10 ВОПРОСОВ</div>
+      <h1>Обзвон на <span class="accent">губернатора</span></h1>
+      <p class="sub">Проверьте знание правил проекта «Лубянка RP». За каждый правильный ответ начисляется <b>10 баллов</b>. Для успешного прохождения необходимо набрать <b>не менее 80 баллов</b>.</p>
+      <div class="stats"><div class="stat">Вопросов: <b>10</b></div><div class="stat">За ответ: <b>10 баллов</b></div><div class="stat">Проходной балл: <b>80</b></div></div>
+      <label class="field" for="candidate">Имя / игровой ник кандидата</label>
+      <input id="candidate" maxlength="40" placeholder="Введите имя или ник (необязательно)">
+      <div style="margin-top:22px"><button class="btn" id="startBtn">Начать обзвон →</button></div>
+      <p class="small">В каждом вопросе выберите один вариант ответа. После выбора ответ будет зафиксирован, а перейти к следующему вопросу можно будет после просмотра результата.</p>
+    </section>
+
+    <section id="quiz" class="hidden">
+      <div class="row"><div class="qnum" id="qCounter">ВОПРОС 1 / 10</div><div class="stats"><div class="stat">Баллы: <b id="scoreNow">0</b> / 100</div></div></div>
+      <div class="progress"><div class="bar" id="bar"></div></div>
+      <h2 class="question" id="question"></h2>
+      <div class="answers" id="answers"></div>
+      <div class="feedback hidden" id="feedback" aria-live="polite"></div>
+      <div class="row" style="margin-top:20px"><span class="small" style="margin:0">Один правильный ответ · 10 баллов</span><button class="btn" id="nextBtn" disabled>Следующий вопрос →</button></div>
+    </section>
+
+    <section id="result" class="hidden result">
+      <div class="qnum">ОБЗВОН ЗАВЕРШЁН</div>
+      <h1 id="resultTitle">Результат</h1>
+      <div class="score" id="finalScore">0 / 100</div>
+      <h2 id="verdict"></h2>
+      <p id="resultText"></p>
+      <div class="stats" style="justify-content:center;margin:20px 0"><div class="stat">Правильных ответов: <b id="correctCount">0</b> / 10</div><div class="stat">Проходной балл: <b>80</b></div></div>
+      <button class="btn" id="restartBtn">Пройти заново</button>
+      <p class="small">Итог теста является результатом проверки знаний правил проекта и сам по себе не означает автоматическое назначение на должность.</p>
+    </section>
+  </main>
+  <div class="footer">LUBYANKA RP · Система проверки кандидатов</div>
+</div>
+<script>
+const questions = [
+ {q:"Что обязан делать каждый игрок, заходя на сервер «Лубянка RP»?",a:["Соблюдать правила проекта и уважать других участников","Выполнять только указания своей организации","Соблюдать правила только во время RP-ситуаций","Самостоятельно устанавливать правила"],c:0,e:"По пункту 1.3 каждый игрок обязан соблюдать правила проекта, уважительно относиться к участникам и не мешать игровому процессу."},
+ {q:"Что означает термин MetaGaming (MG)?",a:["Убийство игрока без IC-причины","Использование OOC-информации в IC-процессе","Выход из игры во время RP-ситуации","Нереалистичное поведение персонажа"],c:1,e:"MG — использование OOC-информации в IC-процессе. Например, поиск персонажа по информации из Discord без получения её игровым путём."},
+ {q:"Игрок вышел с сервера во время активной RP-ситуации, чтобы избежать задержания. Как называется это нарушение?",a:["Bunny Hop","Team Kill","Combat Logging","Spawn Kill"],c:2,e:"Combat Logging — выход из игры во время активной RP-ситуации с целью избежать её последствий."},
+ {q:"Какие действия запрещены на территории зелёной зоны?",a:["Любые криминальные действия","Только ограбления","Только перестрелки","Никакие действия не запрещены"],c:0,e:"Пункт 4.1 запрещает на территории зелёных зон любые криминальные действия."},
+ {q:"Что относится к зелёным зонам согласно правилам проекта?",a:["Только места появления игроков","Больницы, госучреждения, территория Лубянки, банки и другие перечисленные места","Любая территория за пределами города","Только автосалоны"],c:1,e:"К ЗЗ относятся Spawn, больницы, здания государственных организаций, территория Лубянки, банки, автосалоны, места начальных работ и другие обозначенные администрацией территории."},
+ {q:"Как правильно передавать OOC-информацию в игровом чате?",a:["В одинарных квадратных скобках [ ]","Через обычный IC-чат без обозначений","В двойных скобках (( ))","Только голосом"],c:2,e:"Согласно пункту 5.2, для передачи OOC-информации необходимо использовать двойные скобки (( ))."},
+ {q:"Что запрещено сотруднику государственной организации?",a:["Соблюдать субординацию","Выполнять законные распоряжения руководства","Использовать служебные полномочия в личных целях","Обозначать причину задержания"],c:2,e:"Пункт 6.2 запрещает использовать служебные полномочия в личных целях."},
+ {q:"Что обязан сделать сотрудник при задержании игрока?",a:["Сразу отправить его в заключение без объяснений","Обозначить причину задержания и провести необходимые RP-отыгровки","Попросить администратора провести задержание","Не сообщать причину, если задержание проводит госслужащий"],c:1,e:"По пункту 6.7 сотрудник обязан обозначить причину задержания и провести необходимые RP-отыгровки."},
+ {q:"За что отвечает руководитель организации по правилам проекта?",a:["Только за собственную активность","За соблюдение правил участниками организации в рамках своих обязанностей","За все действия каждого игрока на сервере","Только за проведение собеседований"],c:1,e:"Пункты 8.1–8.2 обязывают руководителя поддерживать активность организации и следить за соблюдением правил её участниками."},
+ {q:"Какие меры наказания администрация может применить за нарушения?",a:["Только предупреждение и бан","Warn, Mute, Jail, Kick, Ban, PermBan, Demotion и снятие","Только Kick и PermBan","Наказания не предусмотрены"],c:1,e:"В разделе 11 перечислены Warn, Mute, Jail, Kick, Ban, PermBan, Demotion и снятие с руководящей должности."}
+];
+let index=0, score=0, answered=false, candidate="";
+const $=id=>document.getElementById(id);
+function show(id){["start","quiz","result"].forEach(x=>$(x).classList.toggle("hidden",x!==id))}
+$("startBtn").addEventListener("click",()=>{candidate=$("candidate").value.trim();index=0;score=0;show("quiz");render()});
+function render(){
+ answered=false;
+ const item=questions[index];
+ $("qCounter").textContent=`ВОПРОС ${index+1} / 10`;
+ $("scoreNow").textContent=score;
+ $("bar").style.width=`${index/10*100}%`;
+ $("question").textContent=item.q;
+ $("answers").innerHTML="";
+ $("feedback").classList.add("hidden");
+ $("nextBtn").disabled=true;
+ ["А","Б","В","Г"].forEach((letter,i)=>{
+   const b=document.createElement("button");b.className="answer";
+   const span=document.createElement("span");span.className="letter";span.textContent=letter;
+   const txt=document.createElement("span");txt.textContent=item.a[i];
+   b.append(span,txt);b.addEventListener("click",()=>choose(i));$("answers").append(b);
+ });
+}
+function choose(choice){
+ if(answered)return;answered=true;
+ const item=questions[index], buttons=[...$("answers").children], ok=choice===item.c;
+ if(ok)score+=10;
+ buttons.forEach(b=>{b.disabled=true});
+ $("scoreNow").textContent=score;
+ $("feedback").classList.add("hidden");
+ $("feedback").textContent="";
+ $("nextBtn").disabled=false;
+ $("nextBtn").textContent=index===9?"Посмотреть результат":"Следующий вопрос →";
+}
+$("nextBtn").addEventListener("click",()=>{if(!answered)return;if(index<9){index++;render()}else finish()});
+function finish(){
+ show("result");
+ const passed=score>=80;
+ $("finalScore").textContent=`${score} / 100`;
+ $("finalScore").className="score "+(passed?"pass":"fail");
+ $("resultTitle").textContent=candidate?`Результат: ${candidate}`:"Результат обзвона";
+ $("verdict").textContent=passed?"ПОРОГ ПРОЙДЕН":"ПОРОГ НЕ ПРОЙДЕН";
+ $("verdict").className=passed?"pass":"fail";
+ $("correctCount").textContent=score/10;
+ $("resultText").textContent=passed?"Кандидат набрал проходные 80 баллов или больше. По результатам теста минимальный порог знаний правил пройден.":"Кандидат не набрал необходимые 80 баллов. Для прохождения обзвона требуется повторная подготовка и новая попытка.";
+}
+$("restartBtn").addEventListener("click",()=>{index=0;score=0;show("start");$("candidate").value=candidate});
+</script>
+</body>
+</html>
